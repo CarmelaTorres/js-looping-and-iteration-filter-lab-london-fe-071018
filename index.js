@@ -1,16 +1,15 @@
 // Code your solution in this file
-function findMatching(drivers, name) {
-  return drivers.filter(function(driverName) {
-    return driverName.toLowerCase() === name.toLowerCase();
-  });
+function findMatching(drivers,matchString){
+  let matchedString=drivers.filter(matchedValue=>
+  matchedValue.toLowerCase()===matchString.toLowerCase());
+  return matchedString ;
 }
- function fuzzyMatch(drivers, nameFragment) {
-  let fragmentLength = nameFragment.length
-  return drivers.filter(function(driverName) {
-    return driverName.slice(0, fragmentLength) === nameFragment
-  });
+ function fuzzyMatch(drivers,letterProvided){
+  let fuzzyMatchedDrivers=
+  drivers.filter(anyValue=>anyValue.toLowerCase().indexOf(letterProvided.toLowerCase())===0);
+  return fuzzyMatchedDrivers
 }
- function matchName(drivers, name) {
-  return drivers.filter(function(driverName) {
-    return driverName.name.toLowerCase() === name.toLowerCase()
-  })
+ function matchName(drivers,matchNameString){
+  let matchNameDrivers=drivers.filter(anyValue=>anyValue.name===matchNameString);
+  return matchNameDrivers;
+}
